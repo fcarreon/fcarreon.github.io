@@ -1,0 +1,442 @@
+/*Resetear margenes del elemento body*/
+body {
+	margin: 0;
+}
+
+html {
+	position:relative; 
+	min-height: 100%;
+	padding-bottom: 150px;
+}
+
+/*FONDO ANIMADO ESTILO GALAXIA*/
+#background {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #0f0919;
+}
+
+#fondo-galaxia {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+/*FONDO ANIMADO ESTILO GALAXIA*/
+
+/*INICIO BARRA DE NAVEGACIÓN*/
+nav {
+	width: 100%;
+	height: 45px;
+	overflow: hidden;
+	background-color: #333;
+}
+
+nav a {
+	font-weight: 500;
+	display: block;
+	float: left;
+	font-family: sans-serif;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+nav a:hover {
+	background-color: #111;
+}
+
+#titulo {
+	font-family: sans-serif;
+	font-weight: normal;
+	font-variant: small-caps;
+	font-size: 25px;
+	letter-spacing: -2px;
+	text-shadow: 2px 2px 3px #212121;
+	
+	/*Ajustar Bloque*/
+	padding-left: 20px;
+	padding-right: 30px;
+	margin-top: -8px;
+}
+
+#titulo:hover {
+	background-color: #333;
+}
+
+.active {
+	background-color: #f1fa8c;
+	color: #333;
+}
+
+.active:hover {
+	background-color: #111;
+	color: #fff;
+}
+/*FIN BARRA DE NAVEGACIÓN*/
+
+
+/*INICIO CONTENIDO PRINCIPAL PAGINA INDEX*/
+#contenido {
+	display: block;
+	width: 100%;
+	font-family: sans-serif;
+}
+
+#img_perfil {
+	display: block;
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 50%;
+	border: 3px;
+	border-style: solid;
+	border-color: #FFF;
+}
+
+.nombre {
+	text-align: center;
+	letter-spacing: -1px;
+	font-variant: small-caps;
+	color: #FFF;
+}
+
+.datos {
+	/*Estilo del contenedor*/
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 6px;
+	margin-bottom: 6px;
+	display: block;
+	background-color: rgba(50, 50, 50, 0.5);
+	border-radius: 5px;
+	padding: 5px 10px 5px 10px;
+	width: 32%;
+	/*Estilo del texto*/
+	font-family: sans-serif;
+	font-size: 18px;
+	color: white;
+}
+
+.contenedor-botones {
+	display: block;
+	width: 300px;
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.boton-1 {
+	display: inline-block;
+	width: 85px;
+	margin-left: 4px;
+	margin-right: 4px;
+	background-color: none;
+	border: 3px solid #FFF;
+	border-radius: 10px;
+	padding: 8px;
+	text-decoration: none;
+	text-align: center;
+	font-weight: bold;
+	color: #FFF;
+	transition: all 0.2s;
+}
+
+.boton-1:hover {
+	background-color: #FFF;
+	box-shadow: 1px 2px 8px #333;
+	/*border-color: #237823;*/
+	color: #333;
+}
+/*FIN CONTENIDO PRINCIPAL PAGINA INDEX*/
+
+
+/*INICIO ESTILOS PAGINA PRINCIPAL DE TAREAS*/
+.contenido-tareas {
+	margin: 50px 150px;
+}
+
+.encabezado {
+	width: auto;
+	margin: auto auto 20px auto;
+	border-radius: 20px;
+	text-align: center;
+	font-family: sans-serif;
+	background-color: rgba(80, 80, 80, 0.5);
+	color: #FFF;
+	text-shadow: 1px 2px 3px #111;
+	/*box-shadow: 1px 2px 4px #080808;*/
+}
+
+.encabezado-tareas {
+	vertical-align: middle;
+	padding: 0 8px;
+	height: 50px;
+	font-variant: small-caps;
+	font-size: 20px;
+}
+
+.encabezado-descripcion {
+	vertical-align: middle;
+	padding: 0 8px;
+	height: 50px;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.tabla-titulo {
+	width: 90%;
+	border-bottom: 2px solid #EEE;
+	margin: 5px auto 10px auto;
+	color: #FFF;
+}
+
+#no_tarea {
+	width: 10%;
+	font-family: sans-serif;
+	text-shadow: 1px 1px 2px #222;
+	text-align: center;
+}
+
+#descripcion {
+	width: 70%;
+	font-family: sans-serif;
+	text-shadow: 1px 1px 2px #222;
+	text-align: center;
+}
+
+#codigo {
+	width: 30%;
+	font-family: sans-serif;
+	text-shadow: 1px 1px 2px #222;
+	text-align: center;
+}
+
+.tabla-tareas {
+	width: 90%;
+	background-color: rgba(40, 40, 40, 0.5);
+	border: 1px solid #111;
+	border-radius: 10px;
+	margin: 5px auto 10px auto;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#tarea-num {
+	width: 10%;
+	/*border: 1px solid black;*/
+	font-family: sans-serif;
+	text-align: center;
+}
+
+.tnum-icono {
+	display: inline-flex;
+	background-color: #f1fa8c;
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	align-items: center;
+	justify-content: center;
+	font-size: 30px;
+	color: #333;
+	font-weight: bold;
+}
+
+#tarea-desc {
+	width: 70%;
+	background-color: rgba(120, 120, 120, 0.3);
+	/*border: 1px solid black;*/
+	border-radius: 15px;
+	font-family: sans-serif;
+	text-align: center;
+	color: #FFF;
+}
+
+#tarea-botones {
+	width: 30%;
+	/*border: 1px solid black;*/
+	font-family: sans-serif;
+	text-align: center;
+}
+
+.boton-codigo, .boton-descarga {
+	display: inline-flex;
+	width: 140px;
+	height: 30px;
+	background-color: none;
+	border: 2px solid #FFF;
+	border-radius: 8px;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	color: #FFF;
+	font-weight: bold;
+	font-size: 14px;
+	transition: all 0.2s;
+}
+
+.boton-codigo:hover, .boton-descarga:hover {
+	background-color: #FFF;
+	color: #333;
+	font-size: 16px;
+	box-shadow: 1px 2px 2px #333;
+}
+/*FIN ESTILOS PAGINA PRINCIPAL DE TAREAS*/
+
+/*PAGINAS DE TAREAS DE CODIGO*/
+.tareas-contenido {
+	display: block;
+	clear: both;
+	width: auto;
+	margin: auto 150px;
+	color: #FFF;
+	font-family: sans-serif;
+}
+
+.descripcion-tarea {
+	display: block;
+	clear: both;
+}
+
+.titulo-tarea {
+	font-size: 40px;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+
+.seccion {
+	display: block;
+	clear: both;
+	font-size: 18px;
+	text-align: justify;
+}
+
+.contenedor-codigo {
+	display: block;
+	clear: both;
+}
+
+.lenguaje {
+	font-size: 20px;
+	text-transform: uppercase;
+}
+
+.codigo {
+	overflow-x: scroll;
+	display: block;
+	clear: both;
+	padding: 15px 20px 1px 20px;
+	background-color: rgba(0, 0, 0, 0.4);
+	border-radius: 5px;
+}
+
+.parrafo {
+	display: block;
+	clear: both;
+	padding: 1px 20px 1px 20px;
+	background-color: rgba(0, 0, 0, 0.4);
+	border-radius: 5px;
+	text-align: justify;
+}
+
+.link {
+	color: #FFF;
+}
+
+.tabla-simbolos {
+	width: 60%;
+	border-collapse: collapse;
+	margin-bottom: 20px;
+}
+
+.tabla-simbolos th, .tabla-simbolos td{
+	padding-top: 3px;
+	padding-bottom: 3px;
+	text-align: center;
+	font-size: 16px;
+	border: 2px solid #FFF;
+}
+/*FIN PAGINAS TAREAS DE CODIGO*/
+
+.footer {
+	display: flex;
+	align-items: center;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 80px;
+	background-color: #301847;
+	color: #FFF;
+	font-family: sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5)
+}
+
+.prev-next {
+	display: flex;
+	/*background-color: white;*/
+	justify-content: space-evenly;
+	width: 200px;
+	margin-top: 70px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.prev, .next {
+	display: inline-flex;
+	width: 50px;
+	height: 50px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	text-decoration: none;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 35px;
+	color: #f1fa8c;
+	border: 3px solid #f1fa8c;
+	transition: all 0.2s;
+}
+
+.prev-unav, .next-unav {
+	display: inline-flex;
+	width: 50px;
+	height: 50px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	text-decoration: none;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 35px;
+	color: #9c9a9a;
+	border: 3px solid #9c9a9a;
+	cursor: not-allowed;
+}
+
+.prev:hover, .next:hover {
+	width: 60px;
+	height: 60px;
+	font-size: 40px;
+	background-color: #f1fa8c;
+	color: #333;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.cont-footer {
+	margin-left: 20px;
+}
+
+.footer-creditos {
+	font-weight: normal;
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../css/estilos.css">
+		<link rel="stylesheet" type="text/css" href="../css/code-theme.css">
+		<script type="text/javascript" src="../js/warpspeed.min.js"></script>
+		<script type="text/javascript" src="../js/rainbow-custom.min.js"></script>
+		<title>PIA | Lenguajes de Programación</title>
+	</head>
+	<body>
+		<div id="background">
+			<canvas id="fondo-galaxia">
+			<script>
+				ai_background=new WarpSpeed("fondo-galaxia",{targetSpeed:0.8, speedAdjFactor:0.07, shape:"square", backgroundColor:"hsl(263,45%,8%)", speedWhileLoading:18});
+			</script>
+		</div>
+		<header>
+			<nav>
+				<a id="titulo">Lenguajes de Programación</a>
+				<a href="../index.html">Inicio</a>
+				<a href="personales.html">Personales</a>
+				<a class="active" href="tareas.html">Tareas</a>
+			</nav>
+		</header>
+		<div class="tareas-contenido">
+			<div class="descripcion-tarea">
+				<h2 class="titulo-tarea">Tarea 13</h2>
+				<div class="seccion">
+					<p>
+						Programa elaborado en JAVA y RUBY que realiza una busqueda de un numero en un vector, 
+						mostrando solamente un mensaje indicancdo cuantas veces aparece el numero, ademas de imprimir el vector.  
+					</p>
+				</div>
+			</div>
+			
+			<div class="contenedor-codigo">
+				<h3 class="lenguaje">Java</h3>
+				<div class="codigo">
+<pre><code data-language="java">/* 
+ * Alumno: Brandon Jahir Rojas Quintanilla
+ * Matricula: 1635448
+ * Hora: N2
+ * Salón: 4201
+ * Función: Busqeuda de numero en un vector
+ */
+ 
+import javax.swing.JOptionPane;
+public class Tarea_13{
+	public static void main(String[] arg){
+		int i, size, num, contador, arreglo[];
+		String entrada, vector;
+		
+		entrada = JOptionPane.showInputDialog("Ingrese tama\u00F1o del vector:");
+		size = Integer.parseInt(entrada);
+		
+		arreglo = new int[size];
+		vector = "[";
+		
+		for (i=0; i&lt;size; i++){
+			entrada = JOptionPane.showInputDialog("Ingrese un numero");
+			arreglo[i]=Integer.parseInt(entrada);
+			
+			vector += arreglo[i] + ", ";
+		}
+		
+		vector += "]";
+		
+		entrada = JOptionPane.showInputDialog("Ingrese numero a buscar:");
+		num = Integer.parseInt(entrada);
+		
+		contador = 0;
+		
+		for (i=0; i&lt;size; i++){
+			if(arreglo[i] == num){
+				contador++;
+			}
+		}
+		
+		JOptionPane.showMessageDialog(null, "Vector = " + vector +
+		"\n\rBusqueda: " + num + "\n\rSu busqueda existe " + contador +" veces en el vector.");
+	}
+}
+</code></pre>
+				</div>
+				
+				<hr style="margin:25px 0;">
+				
+				<h3 class="lenguaje">Ruby</h3>
+				<div class="codigo">
+<pre><code data-language="ruby">=begin
+ * Alumno: Brandon Jahir Rojas Quintanilla
+ * Matricula: 1635448
+ * Hora: N2
+ * Salón: 4201
+ * Función: Busqueda en vector
+=end
+
+print("Ingrese el tamaño del vector ")
+n=gets().to_i
+
+array = Array.new(n)
+mensaje="["
+numero=""
+
+for i in 1..n
+  if numero == "" then
+    print("Ingrese un numero ")
+    numero=gets().to_i
+    array[i]=numero
+    mensaje+=numero.to_s+" "
+  else
+    print("Ingrese otro numero ")
+    numero=gets().to_i
+    array[i]=numero
+    mensaje+=numero.to_s+" "
+  end 
+end 
+mensaje+="]"
+
+print("Ingresa el número que deseas buscar en el vector ")
+buscar=gets().to_i
+
+veces=0
+for i in  (1..array.length)
+  if array[i] == buscar then
+    veces+=1
+  end 
+end 
+
+print("El resultado del vector es de: "+mensaje.to_s+
+"\nEl número que se busco fue el: "+buscar.to_s+
+"\nLas veces que se repitio en el vector fue: "+veces.to_s)
+</code></pre>
+				</div>
+			</div>
+			
+			<div class="prev-next">
+				<a class="prev" href="tarea-10.html">&lt</a>
+				<a class="next" href="tarea-14.html">&gt</a>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="cont-footer">PIA Lenguajes de Programación <span class="footer-creditos">// Brandon Rojas</span></div>
+		</footer>
+	</body>
+</html>

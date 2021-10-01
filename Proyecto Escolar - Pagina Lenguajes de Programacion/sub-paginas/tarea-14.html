@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../css/estilos.css">
+		<link rel="stylesheet" type="text/css" href="../css/code-theme.css">
+		<script type="text/javascript" src="../js/warpspeed.min.js"></script>
+		<script type="text/javascript" src="../js/rainbow-custom.min.js"></script>
+		<title>PIA | Lenguajes de Programación</title>
+	</head>
+	<body>
+		<div id="background">
+			<canvas id="fondo-galaxia">
+			<script>
+				ai_background=new WarpSpeed("fondo-galaxia",{targetSpeed:0.8, speedAdjFactor:0.07, shape:"square", backgroundColor:"hsl(263,45%,8%)", speedWhileLoading:18});
+			</script>
+		</div>
+		<header>
+			<nav>
+				<a id="titulo">Lenguajes de Programación</a>
+				<a href="../index.html">Inicio</a>
+				<a href="personales.html">Personales</a>
+				<a class="active" href="tareas.html">Tareas</a>
+			</nav>
+		</header>
+		<div class="tareas-contenido">
+			<div class="descripcion-tarea">
+				<h2 class="titulo-tarea">Tarea 14</h2>
+				<div class="seccion">
+					<p>
+						Programa elaborado en JAVA y RUBY que al recibir como datos de entrada un arreglo 
+						bidimensional de NxM elementos de tipo entero y un numero a buscar, determine 
+						cuantas veces se encuentra ese numero dentro del arreglo e imprima la matriz al final.
+					</p>
+				</div>
+			</div>
+			
+			<div class="contenedor-codigo">
+				<h3 class="lenguaje">Java</h3>
+				<div class="codigo">
+<pre><code data-language="java">/* 
+ * Alumno: Brandon Jahir Rojas Quintanilla
+ * Matricula: 1635448
+ * Hora: N2
+ * Salón: 4201
+ * Función: Busqueda en Matriz
+ */
+ 
+import javax.swing.JOptionPane;
+
+public class Tarea_14{
+	public static void main(String[] arg){
+		int row, col, num, filas, columnas, contador, arreglo[][];
+		String entrada, Matriz;
+		
+		entrada = JOptionPane.showInputDialog("Ingrese cantidad de filas de la matriz");
+		filas = Integer.parseInt(entrada);
+		
+		entrada = JOptionPane.showInputDialog("Ingrese cantidad de columnas de la matriz");
+		columnas = Integer.parseInt(entrada);
+		
+		arreglo = new int[filas][columnas];
+		Matriz = "Matriz = ["+filas+"] ["+columnas+"]\n";
+		
+		for (row=0 ;row&lt;filas; row++){
+			for (col=0; col&lt;columnas; col++){
+				entrada = JOptionPane.showInputDialog("Ingrese un numero");
+				arreglo[row][col] = Integer.parseInt(entrada);
+
+				Matriz += arreglo[row][col]+", ";
+			}
+			Matriz += "\n";
+		}
+		entrada=JOptionPane.showInputDialog("Ingrese numero a buscar");
+		num = Integer.parseInt(entrada);
+		
+		contador = 0;
+		
+		for(row=0; row&lt;filas; row++){
+			for(col=0; col&lt;columnas; col++){
+				if (arreglo[row][col] == num){
+					contador++;
+				}
+			}
+		}
+		
+		JOptionPane.showMessageDialog(null, Matriz +
+		"\n\rBusqueda: " + num + "\n\rSu busqueda existe " + contador +" veces en la matriz.");
+	}
+}</code></pre>
+				</div>
+				
+				<hr style="margin:25px 0;">
+				
+				<h3 class="lenguaje">Ruby</h3>
+				<div class="codigo">
+<pre><code data-language="ruby">=begin
+ * Alumno: Brandon Jahir Rojas Quintanilla
+ * Matricula: 1635448
+ * Hora: N2
+ * Salón: 4201
+ * Función: Busqueda en Matriz
+=end
+
+print("ingrese el total de filas: ")
+n=gets().to_i
+
+print("ingrese el total de columnas: ")
+m=gets().to_i
+
+a= Array.new(n){Array.new(m)}
+		
+for i in (0...n)
+  for j in (0...m)
+      print("ingrese un numero de la posicion: " + (i+1).to_s + " " + (j+1).to_s + " :")
+      a[i][j]=gets().to_i
+  end
+end
+
+print("ingrese el valor a buscar: ")
+b=gets().to_i
+c = 0;
+
+for i in (0...n)
+  for j in (0...m)
+    if(b == a[i][j]) then
+      c = c + 1;
+    end
+  end
+end
+print("El valor que esta buscando es el: " + b.to_s + " y se encuentra " + c.to_s +  " veces en la matriz");
+print("\n\n");
+
+letrero= " "
+for i in (0...n)
+  for j in (0...m)
+    letrero= letrero + a[i][j].to_s + " "
+  end
+  letrero= letrero + "\n"
+end
+puts(letrero)
+</code></pre>
+				</div>
+			</div>
+			
+			<div class="prev-next">
+				<a class="prev" href="tarea-13.html">&lt</a>
+				<a class="next" href="tarea-15.html">&gt</a>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="cont-footer">PIA Lenguajes de Programación <span class="footer-creditos">// Brandon Rojas</span></div>
+		</footer>
+	</body>
+</html>

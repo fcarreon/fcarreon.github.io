@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../css/estilos.css">
+		<link rel="stylesheet" type="text/css" href="../css/code-theme.css">
+		<script type="text/javascript" src="../js/warpspeed.min.js"></script>
+		<script type="text/javascript" src="../js/rainbow-custom.min.js"></script>
+		<title>PIA | Lenguajes de Programación</title>
+	</head>
+	<body>
+		<div id="background">
+			<canvas id="fondo-galaxia">
+			<script>
+				ai_background=new WarpSpeed("fondo-galaxia",{targetSpeed:0.8, speedAdjFactor:0.07, shape:"square", backgroundColor:"hsl(263,45%,8%)", speedWhileLoading:18});
+			</script>
+		</div>
+		<header>
+			<nav>
+				<a id="titulo">Lenguajes de Programación</a>
+				<a href="../index.html">Inicio</a>
+				<a href="personales.html">Personales</a>
+				<a class="active" href="tareas.html">Tareas</a>
+			</nav>
+		</header>
+		<div class="tareas-contenido">
+			<div class="descripcion-tarea">
+				<h2 class="titulo-tarea">Tarea 15</h2>
+				<div class="seccion">
+					<p>
+						<b>Suma de Matrices</b> <br>
+						Programa elaborado en JAVA y RUBY que calcule la suma de dos matrices que ingrese el usuario.
+					</p>
+				</div>
+			</div>
+			
+			<div class="contenedor-codigo">
+				<h3 class="lenguaje">Java</h3>
+				<div class="codigo">
+<pre><code data-language="java">/* 
+ * Alumno: Brandon Jahir Rojas Quintanilla
+ * Matricula: 1635448
+ * Hora: N2
+ * Salón: 4201
+ * Función: Suma de Matrices
+ */
+ 
+import javax.swing.JOptionPane;
+public class Tarea_15{
+	public static void main(String[] arg){
+		int row, col, n, filas, columnas;
+		int matriz1[][], matriz2[][], suma[][];
+		String entrada, mensaje1, mensaje2, mensaje3;
+		
+		entrada = JOptionPane.showInputDialog("Ingrese cantidad de filas de las matrices");
+		filas = Integer.parseInt(entrada);
+		
+		entrada = JOptionPane.showInputDialog("Ingrese cantidad de columnas de las matrices");
+		columnas = Integer.parseInt(entrada);
+		
+		matriz1 = new int [filas][columnas];
+		matriz2 = new int [filas][columnas];
+		suma = new  int [filas][columnas]; 
+		
+		mensaje1 = "Matriz 1 = ["+filas+"]x["+columnas+"]\n";
+		
+		for (row=0 ;row&lt;filas; row++){
+			for (col=0; col&lt;columnas; col++){
+				entrada = JOptionPane.showInputDialog("Llenado de Matriz 1: Ingrese un numero");
+				matriz1[row][col] = Integer.parseInt(entrada);
+
+				mensaje1 += matriz1[row][col]+", ";
+			}
+			mensaje1 += "\n";
+		}
+				
+		mensaje2 = "Matriz 2 = ["+filas+"]x["+columnas+"]\n";
+		for (row=0 ;row&lt;filas; row++){
+			for (col=0; col&lt;columnas; col++){
+				entrada = JOptionPane.showInputDialog("Llenado de Matriz 2: Ingrese un numero");
+				matriz2[row][col] = Integer.parseInt(entrada);
+
+				mensaje2 += matriz2[row][col]+", ";
+			}
+			mensaje2 += "\n";
+		}
+		//Se realiza la suma de las dos matrices
+		mensaje3 = "\n";
+		for (row=0; row&lt;filas; row++){
+			for (col=0; col&lt;columnas; col++){
+				suma[row][col] = matriz1[row][col] + matriz2[row][col];
+				mensaje3 += suma[row][col] + ", ";
+			}
+			mensaje3 = mensaje3 + "\n";
+        }
+		JOptionPane.showMessageDialog(null, mensaje1 + "\n\r" + mensaje2 + "\n\rLa suma de matrices es: " + mensaje3);
+	}
+}</code></pre>
+				</div>
+				
+				<hr style="margin:25px 0;">
+				
+				<h3 class="lenguaje">Ruby</h3>
+				<div class="codigo">
+<pre><code data-language="ruby">=begin
+ * Alumno: Brandon Jahir Rojas Quintanilla
+ * Matricula: 1635448
+ * Hora: N2
+ * Salón: 4201
+ * Función: Suma de Matrices
+=end
+
+print("ingrese el valor de la fila: ")
+n1=gets().to_i
+
+print("ingrese el valor de la columna: ")
+m1=gets().to_i
+
+
+
+a= Array.new(n1){Array.new(m1)}
+
+b= Array.new(n1){Array.new(m1)}
+
+if ( n1 == m1) then
+		
+	print("LLENADO E IMPRIMIENDO LA PRIMERA MATRIZ\n");
+	for i in (0...n1)
+		for j in (0...m1)
+			print("ingrese un numero de la posicion: " + (i+1).to_s + " " + (j+1).to_s + " :")
+			a[i][j]=gets().to_i
+		end
+	end	
+
+	letrero= " "
+	for i in (0...n1)
+		for j in (0...m1)
+			letrero= letrero + a[i][j].to_s + " "
+		end
+		letrero= letrero + "\n"
+	end
+	puts(letrero)
+
+	print("\nLLENANDO E IMPRIMIENDO LA SEGUNDA MATRIZ\n");
+	for i in (0...n1)
+		for j in (0...m1)
+			print("ingrese un numero de la posicion: " + (i+1).to_s + " " + (j+1).to_s + " :")
+			b[i][j]=gets().to_i
+		end
+	end	
+
+	letrero= " "
+	for i in (0...n1)
+		for j in (0...m1)
+			letrero= letrero + b[i][j].to_s + " "
+		end
+		letrero= letrero + "\n"
+	end
+	puts(letrero)
+
+	print("\nSUAMANDO LAS MATRICES\n");
+
+	c = Array.new(n1){Array.new(m1)}
+
+	for i in (0...n1)
+		for j in (0...m1)
+			c[i][j] = a[i][j] + b[i][j];
+		end
+	end
+		letrero= " "
+	for i in (0...n1)
+		for j in (0...m1)
+			letrero= letrero + c[i][j].to_s + " "
+		end
+		letrero= letrero + "\n"
+	end
+	puts(letrero)
+			
+else 
+	print(" Las matrices no coinciden ");
+end
+</code></pre>
+				</div>
+			</div>
+			
+			<div class="prev-next">
+				<a class="prev" href="tarea-14.html">&lt</a>
+				<a class="next" href="tarea-16.html">&gt</a>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="cont-footer">PIA Lenguajes de Programación <span class="footer-creditos">// Brandon Rojas</span></div>
+		</footer>
+	</body>
+</html>

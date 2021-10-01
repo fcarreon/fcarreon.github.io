@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../css/estilos.css">
+		<link rel="stylesheet" type="text/css" href="../css/code-theme.css">
+		<script type="text/javascript" src="../js/warpspeed.min.js"></script>
+		<script type="text/javascript" src="../js/rainbow-custom.min.js"></script>
+		<title>PIA | Lenguajes de Programación</title>
+	</head>
+	<body>
+		<div id="background">
+			<canvas id="fondo-galaxia">
+			<script>
+				ai_background=new WarpSpeed("fondo-galaxia",{targetSpeed:0.8, speedAdjFactor:0.07, shape:"square", backgroundColor:"hsl(263,45%,8%)", speedWhileLoading:18});
+			</script>
+		</div>
+		<header>
+			<nav>
+				<a id="titulo">Lenguajes de Programación</a>
+				<a href="../index.html">Inicio</a>
+				<a href="personales.html">Personales</a>
+				<a class="active" href="tareas.html">Tareas</a>
+			</nav>
+		</header>
+		<div class="tareas-contenido">
+			<div class="descripcion-tarea">
+				<h2 class="titulo-tarea">Tarea 10</h2>
+				<div class="seccion">
+					<p>
+						Programa elaborado en JAVA y RUBY que calcule e imprima los primeros "n" terminos de la siguiente serie:  
+					</p>
+					<ul>
+						<li><b>Serie: </b>1, 8, 243, 16384, 1953125...</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="contenedor-codigo">
+				<h3 class="lenguaje">Java</h3>
+				<div class="codigo">
+<pre><code data-language="java">/* 
+ * Alumno: Brandon Jahir Rojas Quintanilla
+ * Matricula: 1635448
+ * Hora: N2
+ * Salón: 4201
+ * Función: Imprime primeros N elementos de la Serie: 1, 8, 243, 16384, 1953125...
+ */
+ 
+import javax.swing.JOptionPane;
+import java.lang.Math;
+
+public class Tarea_10 {
+	public static void main(String[] args) {
+		int i, elementos, x;
+		double sucesion;
+		String entrada, mensaje;
+		
+		entrada = JOptionPane.showInputDialog("Ingrese el total de elementos:");
+		elementos = Integer.parseInt(entrada);
+		
+		sucesion = 0;
+		x=0;
+		mensaje="";
+		for(i = 1; i &lt;= elementos; i++) {
+			sucesion= Math.pow(i,(2*i-1));
+			x=(int)sucesion; // Convierte Double a int
+			mensaje += x + ", ";
+		}
+		JOptionPane.showMessageDialog(null, "Lo primeros " + elementos + " de la serie son:\n" + mensaje);
+	} //fin main
+} //fin clase</code></pre>
+				</div>
+				
+				<hr style="margin:25px 0;">
+				
+				<h3 class="lenguaje">Ruby</h3>
+				<div class="codigo">
+<pre><code data-language="ruby">=begin
+ * Alumno: Brandon Jahir Rojas Quintanilla
+ * Matricula: 1635448
+ * Hora: N2
+ * Salón: 4201
+ * Función: Imprime primeros N elementos de la Serie: 1, 8, 243, 16384, 1953125...
+=end
+
+print("Ingrese el total de numeros elementos: ")
+n=gets().to_i
+
+serie = 0
+mensaje=""
+for i in 1..n
+  serie=i**(2*i-1)
+  mensaje += sucesion.to_s+","
+end 
+print("La sucesión es " + mensaje)
+</code></pre>
+				</div>
+			</div>
+			
+			<div class="prev-next">
+				<a class="prev" href="tarea-9.html">&lt</a>
+				<a class="next" href="tarea-13.html">&gt</a>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="cont-footer">PIA Lenguajes de Programación <span class="footer-creditos">// Brandon Rojas</span></div>
+		</footer>
+	</body>
+</html>

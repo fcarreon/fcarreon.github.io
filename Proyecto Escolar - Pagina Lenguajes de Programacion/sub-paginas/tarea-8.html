@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../css/estilos.css">
+		<link rel="stylesheet" type="text/css" href="../css/code-theme.css">
+		<script type="text/javascript" src="../js/warpspeed.min.js"></script>
+		<script type="text/javascript" src="../js/rainbow-custom.min.js"></script>
+		<title>PIA | Lenguajes de Programación</title>
+	</head>
+	<body>
+		<div id="background">
+			<canvas id="fondo-galaxia">
+			<script>
+				ai_background=new WarpSpeed("fondo-galaxia",{targetSpeed:0.8, speedAdjFactor:0.07, shape:"square", backgroundColor:"hsl(263,45%,8%)", speedWhileLoading:18});
+			</script>
+		</div>
+		<header>
+			<nav>
+				<a id="titulo">Lenguajes de Programación</a>
+				<a href="../index.html">Inicio</a>
+				<a href="personales.html">Personales</a>
+				<a class="active" href="tareas.html">Tareas</a>
+			</nav>
+		</header>
+		<div class="tareas-contenido">
+			<div class="descripcion-tarea">
+				<h2 class="titulo-tarea">Tarea 8</h2>
+				<div class="seccion">
+					<p>
+						Programa elaborado en JAVA y RUBY que mediante un menu de opciones 
+						permite al usuario calcular la conversión de la escala de temperatura: 
+					</p>
+					<ul>
+						<li>De grados Centrigrados a Fahrenheit</li>
+						<li>De grados Fahrenheit a Centigrados</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="contenedor-codigo">
+				<h3 class="lenguaje">Java</h3>
+				<div class="codigo">
+<pre><code data-language="java">/* 
+ * Alumno: Brandon Jahir Rojas Quintanilla
+ * Matricula: 1635448
+ * Hora: N2
+ * Salón: 4201
+ * Función: convierte de grados centigrados a grados fahrenheit y viceversa
+ */ 
+ 
+import javax.swing.JOptionPane;
+public class Tarea_8{
+	public static void main(String[] args) {
+		
+		String entrada;
+		int celsius, eleccion, fahrenheit;
+		
+		eleccion = JOptionPane.showOptionDialog(null, "Que conversion quieres realizar?", "Temperatura", JOptionPane.DEFAULT_OPTION, 
+			JOptionPane.QUESTION_MESSAGE, null, new String[]{"°C a °F", "°F a °C"}, null);
+		
+		switch(eleccion) {
+			case 0: 
+				entrada = JOptionPane.showInputDialog("Ingrese los grados Celsius");
+				celsius = Integer.parseInt(entrada);
+				fahrenheit = (celsius * (9/5)) + 32; 
+				JOptionPane.showMessageDialog(null,celsius + "°C equivalen a " + fahrenheit + "°F");
+				break;
+			case 1: 
+				entrada = JOptionPane.showInputDialog("Ingrese los grados Fahrenheit");
+				fahrenheit = Integer.parseInt(entrada);
+				celsius = (fahrenheit - 32) * (5/9);
+				JOptionPane.showMessageDialog(null,fahrenheit +"°F equivalen a "  + celsius + "°C");
+				break;
+			default: JOptionPane.showMessageDialog(null,"Opcion Invalida");
+			break;
+		}
+			
+	} 
+}</code></pre>
+				</div>
+				
+				<hr style="margin:25px 0;">
+				
+				<h3 class="lenguaje">Ruby</h3>
+				<div class="codigo">
+<pre><code data-language="ruby">=begin
+ * Alumno: Brandon Jahir Rojas Quintanilla
+ * Matricula: 1635448
+ * Hora: N2
+ * Salón: 4201
+ * Función: Convierte de Celsius a Fahrenheit y viceversa
+=end
+
+puts("¿Que conversion quieres realizar?") 
+puts("0.- Celsius a Fahrenheit\n1.- Fahrenheit a Celsius")
+print("\nSeleccione una opcion: ")
+eleccion = gets().to_i 
+
+case eleccion 
+	when 0
+		print("Ingrese los grados Celsius: ")
+		celsius = gets().to_i
+		fahrenheit =(celsius * (9/5)) + 32;
+		print(celsius.to_s + "°C equivalen a " + fahrenheit.to_s + "°F")# .to_s convierte a String#
+	when 1
+		print("Ingrese los grados Fahrenheit: ")
+		fahrenheit = gets().to_i
+		celsius = (fahrenheit - 32) * (5/9);
+		print(fahrenheit.to_s + "°F equivalen a " + celsius.to_s + "°C")		
+	else
+		print("Opción invalida")
+end 
+	</code></pre>
+				</div>
+			</div>
+			
+			<div class="prev-next">
+				<a class="prev" href="tarea-7.html">&lt</a>
+				<a class="next" href="tarea-9.html">&gt</a>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="cont-footer">PIA Lenguajes de Programación <span class="footer-creditos">// Brandon Rojas</span></div>
+		</footer>
+	</body>
+</html>

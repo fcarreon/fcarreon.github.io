@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../css/estilos.css">
+		<link rel="stylesheet" type="text/css" href="../css/code-theme.css">
+		<script type="text/javascript" src="../js/warpspeed.min.js"></script>
+		<script type="text/javascript" src="../js/rainbow-custom.min.js"></script>
+		<title>PIA | Lenguajes de Programación</title>
+	</head>
+	<body>
+		<div id="background">
+			<canvas id="fondo-galaxia">
+			<script>
+				ai_background=new WarpSpeed("fondo-galaxia",{targetSpeed:0.8, speedAdjFactor:0.07, shape:"square", backgroundColor:"hsl(263,45%,8%)", speedWhileLoading:18});
+			</script>
+		</div>
+		<header>
+			<nav>
+				<a id="titulo">Lenguajes de Programación</a>
+				<a href="../index.html">Inicio</a>
+				<a href="personales.html">Personales</a>
+				<a class="active" href="tareas.html">Tareas</a>
+			</nav>
+		</header>
+		<div class="tareas-contenido">
+			<div class="descripcion-tarea">
+				<h2 class="titulo-tarea">Tarea 5</h2>
+				<div class="seccion">
+					<p>
+						<b>SCHEME</b><br>Investigar:
+					</p>
+					<ul>
+						<li>Simbolos</li>
+						<li>Sintaxis</li>
+						<li>Esqueleto de los Programas</li>
+						<li>Aplicacion para editar y ejecutar</li>
+						<li>A que tipo de paradigma pertenece</li>
+						<li>Ejemplo de programa</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="contenedor-codigo">
+				<h3 class="lenguaje">Simbolos</h3>
+				<div class="parrafo">
+					<p>
+						Un símbolo es un valor atómico. Por ende, determinar la igualdad de dos símbolos es barato 
+						(tiempo constante), a diferencia de una comparación de strings (lineal). Vamos a revisar los 
+						tipos de datos primitivos de Scheme, así como algunas funciones primitivas para trabajar con 
+						valores de esos tipos.
+					</p>
+					<ul>
+						<li>Booleanos</li>
+						<li>Números</li>
+						<li>Caracteres</li>
+						<li>Cadenas</li>
+						<li>Simbolos</li>
+						<li>Procedimientos</li>
+						<li>Parejas y Listas</li>
+					</ul>
+					<p>
+						Scheme, como lenguaje de programación, utiliza de manera análoga a las palabras los denominados 
+						símbolos y éstos se forman uniendo las letras del alfabeto (sin distinguir mayúsculas de minúsculas), 
+						los dígitos del 0 al 9 y cualquier otro carácter que aparezca en el teclado excepto:
+					</p>
+					<div class="codigo">
+								<pre><code data-language="scheme">( ) [ ] { } ; , " ` # \</code></pre>
+					</div>
+					<p>
+						También los siguientes simbolos son especiales y no deben aparecer en primer lugar en un símbolo. Los números no se consideran 
+						símbolos en Scheme. Un símbolo que es usado para representar un valor se denomina variable. El intérprete 
+						determinará el significado de cada variable; los números tienen su valor usual. 
+					</p>
+					<div class="codigo">
+								<pre><code data-language="scheme">: + - .</code></pre>
+					</div>
+					<p>
+						Siguiendo la analogía con los lenguajes el equivalente en Scheme a las frases son las expresiones, que pueden 
+						consistir en un símbolo, un número o una lista, es decir, un paréntesis izquierdo, seguido de expresiones 
+						separadas por espacios en blanco, y para terminar un paréntesis derecho. La primera de dichas expresiones 
+						debe evaluar a un procedimiento, evaluándose las restantes como los argumentos del mismo.
+					</p>
+				</div>
+				
+				<h3 class="lenguaje">Sintaxis</h3>
+				<div class="parrafo">
+					<p>
+						Scheme posee una Sintaxis reducida comparándolo con otros lenguajes. Utiliza la notacion prefija. 
+						Por ejemplo si se desea realizar la suma 1+1, se debe de programar con la siguiente intrucción:
+					</p>
+					<div class="codigo">
+								<pre><code data-language="scheme">(+ 1 1)</code></pre>
+					</div>
+					<p>
+						Las expresiones en Scheme tienen una forma denominada notación prefija de Cambridge (Cambridge 
+						prefix notation) (el nombre de Cambridge es por la localidad Cambridge, Massachusets, donde reside 
+						el MIT, lugar en el que se ideó el Lisp), en la que la expresión está delimitada por paréntesis y 
+						el operando va seguido de los operadores. La sintaxis es la siguiente:
+					</p>
+					<div class="codigo">
+								<pre><code data-language="scheme">(procedimiento expresion1 . . . expresionk)
+</code></pre>
+					</div>
+					<p>
+						Para agregar un comentario en Scheme se inicia con un punto y coma (;) y continúan hasta el final de la línea.
+					</p>
+					<p>
+						Las variables son dinámicamente tipadas. Para asociarlas a un valor concreto, podemos usar define, una 
+						expresión let, o alguna de sus variantes. Las variables asignadas en el primer nivel usando define están 
+						en ámbito global (es decir, son visibles en el resto de programa).
+					</p>
+					<div class="codigo">
+								<pre><code data-language="scheme">(define var1 value)</code></pre>
+					</div>
+					<p>
+						Scheme tiene el concepto de puertos de donde leer o a los que escribir. 
+						Scheme define tres puertos por defecto, accesibles con las funciones current-input-port, 
+						current-output-port y current-error-port. Hay varias formas de imprimir, por ejemplo printf:
+					</p>
+					<div class="codigo">
+								<pre><code data-language="ruby">&gt (printf "hola~n")
+hola
+&gt (printf "hola ~a ~s~n" "mundo" "feliz")
+hola mundo "feliz"</code></pre>
+					</div>
+					<p></p>
+				</div>
+				
+				<h3 class="lenguaje">Esqueleto de los Programas</h3>
+				<div class="parrafo">
+					<p>
+						Scheme es un lenguaje funcional (si bien impuro pues sus estructuras de datos no son inmutables) y un dialecto de Lisp. 
+						Scheme, como todos los dialectos de Lisp, tiene una sintaxis muy reducida y se parece mucho a C, comparado con muchos 
+						otros lenguajes. No necesita reglas de precedencia en su gramática, ya que usa notación prefija para todas las llamadas 
+						a función. En el mundo de Lisp tales expresiones son conocidas como S-expressions.
+						El poder característico de los Lisp reside en la simpleza de su sintaxis homoicónica hecha de listas anidadas, que 
+						refleja la estructura del árbol de sintaxis abstracta del programa y lo pone a disposición del programador. Esto 
+						facilita la metaprogramación mediante macros
+					</p>
+				</div>
+				
+				<h3 class="lenguaje">Aplicación para Editar y Ejecutar</h3>
+				<div class="parrafo">
+					<p>
+						Existen a su vez múltiples intérpretes de Scheme, nosotros vamos a usar uno de las más extendidos: DrRacket 
+						(antes llamado DrScheme)
+					</p>
+					<a class="link" href="https://racket-lang.org/">Pagina de DrRacket</a>
+					<p></p>
+				</div>
+				
+				<h3 class="lenguaje">A que tipo de Paradigma Pertenece</h3>
+				<div class="parrafo">
+					<p>
+						Scheme pertenece al  paradigma funcional de programación de programacióm funcional.
+					</p>
+				</div>
+				
+				<h3 class="lenguaje">Ejemplo de programa</h3>
+				<div class="parrafo">
+				<p></p>
+					<div class="codigo">
+								<pre><code data-language="python">num = float(input("Ingresa un numero: "){
+suma=0;j=0;
+while (j&lt=k) {
+	suma = suma+j;
+    j++;
+  }
+}
+</code></pre>
+					</div>
+					<p></p>
+				</div>
+			</div>
+			
+			<div class="prev-next">
+				<a class="prev" href="tarea-4.html">&lt</a>
+				<a class="next" href="tarea-6.html">&gt</a>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="cont-footer">PIA Lenguajes de Programación <span class="footer-creditos">// Brandon Rojas</span></div>
+		</footer>
+	</body>
+</html>

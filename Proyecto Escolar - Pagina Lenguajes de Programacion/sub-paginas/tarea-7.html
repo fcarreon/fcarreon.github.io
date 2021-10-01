@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../css/estilos.css">
+		<link rel="stylesheet" type="text/css" href="../css/code-theme.css">
+		<script type="text/javascript" src="../js/warpspeed.min.js"></script>
+		<script type="text/javascript" src="../js/rainbow-custom.min.js"></script>
+		<title>PIA | Lenguajes de Programación</title>
+	</head>
+	<body>
+		<div id="background">
+			<canvas id="fondo-galaxia">
+			<script>
+				ai_background=new WarpSpeed("fondo-galaxia",{targetSpeed:0.8, speedAdjFactor:0.07, shape:"square", backgroundColor:"hsl(263,45%,8%)", speedWhileLoading:18});
+			</script>
+		</div>
+		<header>
+			<nav>
+				<a id="titulo">Lenguajes de Programación</a>
+				<a href="../index.html">Inicio</a>
+				<a href="personales.html">Personales</a>
+				<a class="active" href="tareas.html">Tareas</a>
+			</nav>
+		</header>
+		<div class="tareas-contenido">
+			<div class="descripcion-tarea">
+				<h2 class="titulo-tarea">Tarea 7</h2>
+				<div class="seccion">
+					<p>
+						<b>R</b><br>Investigar:
+					</p>
+					<ul>
+						<li>Simbolos</li>
+						<li>Sintaxis</li>
+						<li>Esqueleto de los Programas</li>
+						<li>Aplicacion para editar y ejecutar</li>
+						<li>A que tipo de paradigma pertenece</li>
+						<li>Ejemplo de programa</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="contenedor-codigo">
+				<h3 class="lenguaje">Simbolos</h3>
+				<div class="parrafo">
+					<p>
+						Los operadores aritmeticos, comparativos y lógicos son muy importantes a la hora de programar funciones, 
+						ya que gracias a ellos se puede hacer distinciones de datos, agrupaciones, etc.. Se presenta 
+						a continuación una pequeña introducción de ellos:
+					</p>
+					<h4>Operadores de Aritmeticos</h4>
+					<table class="tabla-simbolos">
+						<tr>
+							<th>Simbolo</th>
+							<th>Significado</th>
+						</tr>
+						<tr>
+							<td><b>+</b></td>
+							<td>Suma</td>
+						</tr>
+						<tr>
+							<td><b>-</b></td>
+							<td>Resta</td>
+						</tr>
+						<tr>
+							<td><b>*</b></td>
+							<td>Multiplicación</td>
+						</tr>
+						<tr>
+							<td><b>/</b></td>
+							<td>División</td>
+						</tr>
+						<tr>
+							<td>^</td>
+							<td>Potencia</td>
+						</tr>
+					</table>
+					
+					<h4>Operadores de Relación</h4>
+					<table class="tabla-simbolos">
+						<tr>
+							<th>Simbolo</th>
+							<th>Significado</th>
+						</tr>
+						<tr>
+							<td>&lt;</td>
+							<td>Menor que</td>
+						</tr>
+						<tr>
+							<td>&gt;</td>
+							<td>Mayor que</td>
+						</tr>
+						<tr>
+							<td>&lt;=</td>
+							<td>Menor o igual que</td>
+						</tr>
+						<tr>
+							<td>&gt;=</td>
+							<td>Mayor o igual que</td>
+						</tr>
+						<tr>
+							<td>==</td>
+							<td>Igual que</td>
+						</tr>
+						<tr>
+							<td>!=</td>
+							<td>Diferente que</td>
+						</tr>
+					</table>
+					
+					<h4>Operadores Lógicos</h4>
+					<table class="tabla-simbolos">
+						<tr>
+							<th>Simbolo</th>
+							<th>Significado</th>
+						</tr>
+						<tr>
+							<td>!x</td>
+							<td>Negación (No x)</td>
+						</tr>
+						<tr>
+							<td>n&m</td>
+							<td>Conjunción (n Y m)</td>
+						</tr>
+						<tr>
+							<td>n|m</td>
+							<td>Disyunción (n O m)</td>
+						</tr>
+						<tr>
+							<td>isTRUE(x)</td>
+							<td>Comprobación (Comprueba si x es verdadero)</td>
+						</tr>
+					</table>
+				</div>
+				
+				<h3 class="lenguaje">Sintaxis</h3>
+				<div class="parrafo">
+					<p>
+						En casi todos los demás lenguajes de programación, el signo igual asigna un cierto valor a una variable.
+						Como ya sabemos, x = 3 significa que x ahora tiene el valor de 3. En R se hace de una manera diferente.
+						El operador de asignación principal es &lt;- como en:
+					</p>
+					
+					<div class="codigo">
+								<pre><code data-language="r">x &lt;- 3</code></pre>
+					</div>
+					<p>
+						Una nota más sobre las variables: R es un lenguaje que distingue entre mayúsculas y minúsculas. Entonces, 
+						la variable x no es lo mismo que X. Eso se aplica a casi todo en R; por ejemplo, la función subconjunto() 
+						no es lo mismo que SubConjunto ().
+					</p>
+					<p>
+						Cuando creas un arreglo en R, tienes que agregar una pequeña parte mas al codigo. Para poner multiples valores 
+						a una sola variable se necesita la funcion c().
+					</p>
+					<div class="codigo">
+								<pre><code data-language="r">Mi-arrelgo &lt;- c(1, 1, 2, 3, 5, 8)</code></pre>
+					</div>
+					<p></p>
+				</div>
+				
+				<h3 class="lenguaje">Esqueleto de los Programas</h3>
+				<div class="parrafo">
+					<p>
+						R soporta como tipo de datos básicos valores numéricos, caracteres, cadenas de caracteres y valores booleanos. 
+						Los distintos tipos de datos pueden almacenarse en variables que se identifican con un nombre. Los nombres de 
+						variables deben comenzar por una letra seguida de más letras, dígitos o los caracteres punto (.) o subrayado (_). 
+						Se diferencia entre mayúsculas y minúsculas. Los nombres de las variables deben ser informativos utilizando por 
+						convenio él . Para separar distintas palabras. Para almacenar datos en una variable se utiliza el operador de 
+						asignación &lt;-
+					</p>
+					<div class="codigo">
+								<pre><code data-language="r">mi.variable.numerica &lt;- 3.524
+mi.variable.caracter &lt;- "control"
+mi.variable.booleana &lt;- TRUE</code></pre>
+					</div>
+					<p>
+						Una vez instale R en su computador, el programa se puede iniciar corriendo el archivo ejecutable correspondiente. 
+						El cursor, que por defecto es el símbolo ‘>’, indica que R está listo para recibir un comando. El comando mas simple 
+						es escribir el nombre de un objeto para visualizar su contenido. Por ejemplo, si un objeto n contiene el valor 10:
+					</p>
+				</div>
+				
+				<h3 class="lenguaje">Aplicación para Editar y Ejecutar</h3>
+				<div class="parrafo">
+					<p>
+						Junto con R se incluyen ocho bibliotecas o paquetes (llamadas bibliotecas estándar) 
+						pero otros muchos están disponibles a través de Internet. Actualmente se encuentran disponibles 
+						9249 librerías (packages) desarrollados en R, que cubren multitud de aplicaciones en diversos campos. 
+						Una vez instalado el programa, la forma más fácil de usarlo es de forma interactiva mediante la línea 
+						de comandos. Cuando R se inicia, aparece la ventana del programa “Gui” (Graphical User Iinterface) 
+						con un mensaje de apertura.
+					</p>
+					<a class="link" href="http://www.r-project.org/">Pagina de R</a>
+					<p></p>
+				</div>
+				
+				<h3 class="lenguaje">A que tipo de Paradigma Pertenece</h3>
+				<div class="parrafo">
+					<p>
+						R es un lenguaje multiparadigma y cae en las categorias Funcional, Imperativo y Orientado a Objetos.
+					</p>
+				</div>
+				
+				<h3 class="lenguaje">Ejemplo de programa</h3>
+				<div class="parrafo">
+				<p></p>
+					<div class="codigo">
+								<pre><code data-language="r">print(sample(1:3))
+print(sample(1:3, size=3, replace=FALSE))  # same as previous line
+print(sample(c(2,5,3), size=4, replace=TRUE)
+print(sample(1:2, size=10, prob=c(1,3), replace=TRUE))</code></pre>
+					</div>
+					<p></p>
+				</div>
+			</div>
+			
+			<div class="prev-next">
+				<a class="prev" href="tarea-6.html">&lt</a>
+				<a class="next" href="tarea-8.html">&gt</a>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="cont-footer">PIA Lenguajes de Programación <span class="footer-creditos">// Brandon Rojas</span></div>
+		</footer>
+	</body>
+</html>

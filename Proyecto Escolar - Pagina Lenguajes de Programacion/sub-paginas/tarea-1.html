@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../css/estilos.css">
+		<link rel="stylesheet" type="text/css" href="../css/code-theme.css">
+		<script type="text/javascript" src="../js/warpspeed.min.js"></script>
+		<script type="text/javascript" src="../js/rainbow-custom.min.js"></script>
+		<title>PIA | Lenguajes de Programación</title>
+	</head>
+	<body>
+		<div id="background">
+			<canvas id="fondo-galaxia">
+			<script>
+				ai_background=new WarpSpeed("fondo-galaxia",{targetSpeed:0.8, speedAdjFactor:0.07, shape:"square", backgroundColor:"hsl(263,45%,8%)", speedWhileLoading:18});
+			</script>
+		</div>
+		<header>
+			<nav>
+				<a id="titulo">Lenguajes de Programación</a>
+				<a href="../index.html">Inicio</a>
+				<a href="personales.html">Personales</a>
+				<a class="active" href="tareas.html">Tareas</a>
+			</nav>
+		</header>
+		<div class="tareas-contenido">
+			<div class="descripcion-tarea">
+				<h2 class="titulo-tarea">Tarea 1</h2>
+				<div class="seccion">
+					<p>
+						Responder las siguientes preguntas:
+					</p>
+					<ul>
+						<li>¿Que es un paradigma?</li>
+						<li>¿Cuales son los paradigmas de los lenguajes de programación?</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="contenedor-codigo">
+				<h3 class="lenguaje">¿Que es un paradigma?</h3>
+				<div class="parrafo">
+					<p>
+						El concepto de paradigma se utiliza comúnmente como sinónimo de “ejemplo” 
+						o para hacer referencia en caso de algo que se toma como “modelo".
+						Denominamos como paradigma a todo aquel modelo, patrón o ejemplo que debe 
+						seguirse en determinada situación. <br>
+						En un sentido amplio, se refiere a una teoría o conjunto de teorías que sirve 
+						de modelo a seguir para resolver problemas o situaciones determinadas que se planteen.
+					</p>
+					<p>
+						Algunos sinónimos de paradigma son modelo:
+					</p>
+					<ul>
+						<li>patrón</li>
+						<li>ejemplo</li>
+						<li>molde</li>
+						<li>ideal</li>
+						<li>canon</li>
+						<li>norma</li>
+						<li>regla</li>
+					</ul>
+				</div>
+				
+				<h3 class="lenguaje">¿Cuales son los paradigmas de los lenguajes de programación?</h3>
+				<div class="parrafo">
+					<p>
+						Un paradigma de programación se refiere a la forma en que un programador o un conjunto 
+						de programadores dan solución a uno o varios problemas claramente definidos. En este sentido, 
+						representa una manera particular de ofrecer soluciones.
+					</p>
+					<p>
+						Existen distintos paradigmas de programación. Estos paradigmas se diferencian unos de 
+						otros debido a la forma de abordar los elementos involucrados en el problema, así 
+						como los pasos necesarios para llegar a su solución. Los cinco paradigmas principales en programación son:
+					</p>
+					<ul>
+						<li>
+							Imperativo:
+							<p>
+								Son aquellos que facilitan los cálculos por medio de cambios de estado, 
+								entendiendo como estado la condición de una memoria de almacenamiento. 
+								Los lenguajes estructurados en bloques, se refieren a los ámbitos anidados, 
+								es decir los bloques pueden estar anidados dentro de otros bloques y contener sus propias variables.
+								<br>
+								El objetivo es conseguir lenguajes expresivos y "matemáticamente elegantes", 
+								en los que no sea necesario bajar al nivel de la máquina para describir el proceso 
+								llevado a cabo por el programa, y evitando el concepto de ''estado'' del cómputo.
+								La secuencia de computaciones llevadas a cabo por el programa se regiría única y 
+								exclusivamente por la ''reescritura'' de definiciones más amplias a otras cada vez más 
+								concretas y definidas, usando lo que se denominan "definiciones dirigidas".
+							</p>
+						</li>
+						<li>
+							Declarativo
+							<p>
+								La programación declarativa, en contraposición a la programación imperativa, es un paradigma 
+								de programación que está basado en el desarrollo de programas especificando o "declarando" un 
+								conjunto de condiciones, proposiciones, afirmaciones, restricciones, ecuaciones o transformaciones 
+								que describen el problema y detallan su solución. La solución es obtenida mediante mecanismos 
+								internos de control, sin especificar exactamente cómo encontrarla (tan solo se le indica a la 
+								computadora qué es lo que se desea obtener o qué es lo que se está buscando). No existen asignaciones 
+								destructivas, y las variables son utilizadas con transparencia referencial.
+							</p>
+						</li>
+						<li>
+							Lógico
+							<p>
+								La Programación Lógica es un Paradigma de Programación basado en la Lógica.
+								Los programas construidos un lenguaje lógico están construidos únicamente por 
+								expresiones lógicas, es decir, que son ciertas o falsas, en oposición a una 
+								expresión interrogativa (una pregunta) o expresiones imperativas (una orden).
+							</p>
+						</li>
+						<li>
+							Funcional
+							<p>
+								El paradigma funcional está basado en el modelo matemático de composición funcional. 
+								En este modelo, el resultado de un cálculo es la entrada del siguiente, y así sucesivamente 
+								hasta que una composición produce el valor deseado.	No existe el concepto de celda de memoria 
+								que es asignada o modificada. Más bien, existen valores intermedios que son el resultado de 
+								cálculos anteriores y las entradas a cálculos subsiguientes. Tampoco existen sentencias 
+								imperativas y todas las funciones tienen transparencia referencial. 
+								<br>
+								La programación funcional incorpora el concepto de función como 
+								objeto de primera clase, lo que significa que las funciones se pueden tratar como datos 
+								(pueden pasar como parámetros, calculadas y devueltas como valores normales, y mezcladas 
+								en el cálculo con otras formas de datos).
+							</p>
+						</li>
+						<li>
+							Orientado A Objetos
+							<p>
+							La Programación Orientada a Objetos (POO u OOP según siglas en inglés) es un paradigma de 
+							programación que define los programas en términos de "clases de objetos", objetos que son 
+							entidades que combinan estado (es decir, datos), comportamiento (esto es, procedimientos o métodos) 
+							e identidad (propiedad del objeto que lo diferencia del resto). La programación orientada a objetos 
+							expresa un programa como un conjunto de estos objetos, que colaboran entre ellos para realizar 
+							tareas. Esto permite hacer los programas y módulos más fáciles de escribir, mantener y reutilizar.
+							<br>
+							De esta forma, un objeto contiene toda la información, (los denominados atributos) que permite 
+							definirlo e identificarlo frente a otros objetos pertenecientes a otras clases (e incluso entre 
+							objetos de una misma clase, al poder tener valores bien diferenciados en sus atributos). A su vez, 
+							dispone de mecanismos de interacción (los llamados métodos) que favorecen la comunicación entre 
+							objetos (de una misma clase o de distintas), y en consecuencia, el cambio de estado en los propios 
+							objetos. Esta característica lleva a tratarlos como unidades indivisibles, en las que no se separan 
+							(ni deben separarse) información (datos) y procesamiento (métodos).
+							</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="prev-next">
+				<a class="prev-unav">&lt</a>
+				<a class="next" href="tarea-2.html">&gt</a>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="cont-footer">PIA Lenguajes de Programación <span class="footer-creditos">// Brandon Rojas</span></div>
+		</footer>
+	</body>
+</html>

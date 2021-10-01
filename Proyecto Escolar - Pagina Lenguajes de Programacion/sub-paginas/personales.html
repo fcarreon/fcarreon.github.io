@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../css/estilos.css">
+		<script type="text/javascript" src="../js/warpspeed.min.js"></script>
+		<title>PIA | Lenguajes de Programación</title>
+	</head>
+	
+	<body>
+		<div id="background">
+			<canvas id="fondo-galaxia">
+			<script>
+				ai_background=new WarpSpeed("fondo-galaxia",{targetSpeed:0.8, speedAdjFactor:0.07, shape:"square", backgroundColor:"hsl(263,45%,8%)", speedWhileLoading:18});
+			</script>
+		</div>
+		</div>
+		<header>
+			<nav>
+				<a id="titulo">Lenguajes de Programación</a>
+				<a href="../index.html">Inicio</a>
+				<a class="active" href="personales.html">Personales</a>
+				<a href="tareas.html">Tareas</a>
+			</nav>
+		</header>
+
+		<div class="contenido-tareas">
+			<header>
+				<table class="encabezado">
+					<tr>
+						<td class="encabezado-tareas"><h2>Tareas:</h2></td>
+						<td class="encabezado-descripcion">
+							<p>
+								En esta pagina se encuentran las tareas de temas personales
+							</p>
+						</td>
+					</tr>
+				</table>
+			</header>
+			
+			<hr>
+			
+			<div>
+				<table class="tabla-titulo">
+					<thead>
+						<tr>
+							<th id="no_tarea">&#8470 Tarea</th>
+							<th id="descripcion">Descripción</th>
+							<th id="codigo">Codigo</th>
+						</tr>
+					</thead>
+				</table>
+				
+				<table class="tabla-tareas">
+					<tr>
+						<td rowspan="2" id="tarea-num">
+							<span class="tnum-icono">1</span>
+						</td>
+						<td rowspan="2" id="tarea-desc">
+							<p>
+								Mini-Biografia <br>
+								hablando de fecha de nacimiento, pasatiempos, tipo de trabajo que le gustaria tener, 
+								que ciudades le gustaria conocer, etc (Incluir Imagenes)
+							</p>
+						</td>
+						<td rowspan="2" id="tarea-botones">
+							<a class="boton-codigo" href="personal-1.html">Ver Tarea</a>
+						</td>
+					</tr>
+				</table>
+				
+				<table class="tabla-tareas">
+					<tr>
+						<td rowspan="2" id="tarea-num">
+							<span class="tnum-icono">2</span>
+						</td>
+						<td rowspan="2" id="tarea-desc">
+							<p>
+								Pasatiempo <br>
+								Pagina en donde se explique algun pasatiempo.
+							</p>
+						</td>
+						<td id="tarea-botones">
+							<a class="boton-codigo" style="cursor: not-allowed;">Ver Tarea</a>
+						</td>
+					</tr>
+				</table>
+				
+				<table class="tabla-tareas">
+					<tr>
+						<td rowspan="2" id="tarea-num">
+							<span class="tnum-icono">3</span>
+						</td>
+						<td rowspan="2" id="tarea-desc">
+							<p>
+								Investigar: <br>
+								Algun empresario nacional o internacional, que producto invento y que pasos 
+								siguio para realizarlo, y dificultades para llevarlo acabo.
+							</p>
+						</td>
+						<td id="tarea-botones">
+							<a class="boton-codigo" style="cursor: not-allowed;">Ver Tarea</a>
+						</td>
+					</tr>
+				</table>
+				
+			</div>
+		</div>
+		
+		<footer class="footer">
+			<div class="cont-footer">PIA Lenguajes de Programación <span class="footer-creditos">// Brandon Rojas</span></div>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../css/estilos.css">
+		<link rel="stylesheet" type="text/css" href="../css/code-theme.css">
+		<script type="text/javascript" src="../js/warpspeed.min.js"></script>
+		<script type="text/javascript" src="../js/rainbow-custom.min.js"></script>
+		<title>PIA | Lenguajes de Programación</title>
+	</head>
+	<body>
+		<div id="background">
+			<canvas id="fondo-galaxia">
+			<script>
+				ai_background=new WarpSpeed("fondo-galaxia",{targetSpeed:0.8, speedAdjFactor:0.07, shape:"square", backgroundColor:"hsl(263,45%,8%)", speedWhileLoading:18});
+			</script>
+		</div>
+		<header>
+			<nav>
+				<a id="titulo">Lenguajes de Programación</a>
+				<a href="../index.html">Inicio</a>
+				<a href="personales.html">Personales</a>
+				<a class="active" href="tareas.html">Tareas</a>
+			</nav>
+		</header>
+		<div class="tareas-contenido">
+			<div class="descripcion-tarea">
+				<h2 class="titulo-tarea">Tarea 9</h2>
+				<div class="seccion">
+					<p>
+						Programa elaborado en JAVA y RUBY que mediante un menu de opciones permite al usuario convertir 
+						de pesos (MXN) a las siguientes monedas:  
+					</p>
+					<ol>
+						<li>Dolar</li>
+						<li>Euros</li>
+						<li>Yen (Japones)</li>
+						<li>Dolar (Hong Kong)</li>
+					</ol>
+				</div>
+			</div>
+			
+			<div class="contenedor-codigo">
+				<h3 class="lenguaje">Java</h3>
+				<div class="codigo">
+<pre><code data-language="java">/* 
+ * Alumno: Brandon Jahir Rojas Quintanilla
+ * Matricula: 1635448
+ * Hora: N2
+ * Salón: 4201
+ * Función: convierte pesos a dolar, euro, yen y dolar de hong kong
+ */ 
+
+import javax.swing.JOptionPane;
+import java.text.DecimalFormat;
+
+public class Tarea_9{
+	public static void main(String[] args) {
+		
+		String entrada, letrero;
+		int i, pesos, eleccion;
+		float cambio, dolar, euro, yen, dolarh;
+		
+		DecimalFormat format = new DecimalFormat();
+		format.setMaximumFractionDigits(2); 
+		
+		dolar = 18.80f; 
+		euro = 22.95f;
+		yen = 0.1725f;	
+		dolarh = 0.41685f;
+		
+		eleccion = JOptionPane.showOptionDialog(null, "Que conversion desea realizar?", "Cambio de Moneda", JOptionPane.DEFAULT_OPTION, 
+			JOptionPane.QUESTION_MESSAGE, null, new String[]{"Pesos a Dolares", "Pesos a Euros", "Pesos a Yen", "Pesos a Dolares (Hong Kong)"}, null);
+		
+		switch(eleccion) {
+			case 0: 
+				entrada = JOptionPane.showInputDialog("Ingrese la cantidad de pesos a cambiar");
+				pesos = Integer.parseInt(entrada);
+				cambio = pesos/dolar;
+				
+				if (cambio >= 0){
+					JOptionPane.showMessageDialog(null,"La conversión de pesos a dolar fue: " + format.format(cambio));
+				}
+				else {
+					JOptionPane.showMessageDialog(null,"La opción fue invalida regreso: " + format.format(cambio));
+				}
+				break;
+			case 1: 
+				entrada = JOptionPane.showInputDialog("Ingrese la cantidad de pesos a cambiar");
+				pesos = Integer.parseInt(entrada);
+				cambio = pesos/euro;
+				
+				if (cambio >= 0){
+					JOptionPane.showMessageDialog(null,"La conversión de pesos a euros fue: " + format.format(cambio));
+				}
+				else {
+					JOptionPane.showMessageDialog(null,"La opción fue invalida regreso: " + format.format(cambio));
+				}
+				break;
+			case 2: 
+				entrada = JOptionPane.showInputDialog("Ingrese la cantidad de pesos a cambiar");
+				pesos = Integer.parseInt(entrada);
+				cambio= pesos/yen;
+				
+				if (cambio >= 0){
+					JOptionPane.showMessageDialog(null,"La conversión de pesos a yen fue: " + format.format(cambio));
+				}
+				else {
+					JOptionPane.showMessageDialog(null,"La opción fue invalida regreso: " + format.format(cambio));
+				}
+				break;
+			case 3: 
+				entrada = JOptionPane.showInputDialog("Ingrese la cantidad de pesos a cambiar");
+				pesos = Integer.parseInt(entrada);
+				cambio= pesos/dolarh;
+				
+				if (cambio >= 0){
+					JOptionPane.showMessageDialog(null,"La conversión de pesos a dolares(hong kong) fue: " + format.format(cambio));
+				}
+				else {
+					JOptionPane.showMessageDialog(null,"La opción fue invalida regreso: " + format.format(cambio));
+				}
+				break;
+			default: JOptionPane.showMessageDialog(null,"Opcion Invalida");
+			break;
+		}
+			
+	} //fin main
+} //fin clase</code></pre>
+				</div>
+				
+				<hr style="margin:25px 0;">
+				
+				<h3 class="lenguaje">Ruby</h3>
+				<div class="codigo">
+<pre><code data-language="ruby">=begin
+ * Alumno: Brandon Jahir Rojas Quintanilla
+ * Matricula: 1635448
+ * Hora: N2
+ * Salón: 4201
+ * Función: convierte pesos a dolar, euro, yen y dolar de hong kong
+=end
+
+puts("¿Que conversión desa realizar? Selecciona una opción...")
+print("\n1.- Pesos a Dolares\n2.- Pesos a Euros\n3.- Pesos a Yen \n4.- Pesos a Dolares (Hong Kong) ")
+opcion=gets().to_i
+
+
+dolar=18.80
+euro=22.95
+yen=0.1725
+dolarh=0.41685
+
+case opcion
+  when 1
+    print("Ingrese cantidad de pesos: ")
+    pesos=gets().to_i
+    conversion=pesos/dolar
+    if (conversion >=0)
+      print("La conversión de pesos a dolar fue:\n"+(conversion).round(2).to_s)	
+		else 
+      print("La opción fue invalida regreso:\n"+(conversion).round(2).to_s)
+		end
+  when 2
+    print("Ingrese cantidad de pesos: ")
+    pesos=gets().to_i
+    conversion=pesos/euro;
+    if (conversion >=0)
+      print("La conversión de pesos a euros fue:\n"+(conversion).round(2).to_s)
+    else 
+      print("La opción fue invalida regreso:\n"+(conversion).round(2).to_s)
+		end
+  when 3
+    print("Ingrese cantidad de pesos: ")
+    pesos=gets().to_i
+    conversion=pesos/yen
+    if (conversion >=0)
+      print("La conversión de pesos a yen fue:\n"+(conversion).round(2).to_s)
+    else 
+      print("La opción fue invalida regreso:\n"+(conversion).round(2).to_s)
+		end
+  when 4
+    print("Ingrese cantidad de pesos: ")
+    pesos=gets().to_i
+    conversion=pesos*dolarh
+    if (conversion >=0)
+      print("La conversión de pesos a dolares(hong kong) fue:\n"+(conversion).round(2).to_s)
+    else 
+      print("La opción fue invalida regreso:\n"+(conversion).round(2).to_s)
+		end
+else 
+  print("Opcion invalida")
+end 
+</code></pre>
+				</div>
+			</div>
+			
+			<div class="prev-next">
+				<a class="prev" href="tarea-8.html">&lt</a>
+				<a class="next" href="tarea-10.html">&gt</a>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="cont-footer">PIA Lenguajes de Programación <span class="footer-creditos">// Brandon Rojas</span></div>
+		</footer>
+	</body>
+</html>

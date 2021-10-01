@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../css/estilos.css">
+		<link rel="stylesheet" type="text/css" href="../css/code-theme.css">
+		<script type="text/javascript" src="../js/warpspeed.min.js"></script>
+		<script type="text/javascript" src="../js/rainbow-custom.min.js"></script>
+		<title>PIA | Lenguajes de Programación</title>
+	</head>
+	<body>
+		<div id="background">
+			<canvas id="fondo-galaxia">
+			<script>
+				ai_background=new WarpSpeed("fondo-galaxia",{targetSpeed:0.8, speedAdjFactor:0.07, shape:"square", backgroundColor:"hsl(263,45%,8%)", speedWhileLoading:18});
+			</script>
+		</div>
+		<header>
+			<nav>
+				<a id="titulo">Lenguajes de Programación</a>
+				<a href="../index.html">Inicio</a>
+				<a href="personales.html">Personales</a>
+				<a class="active" href="tareas.html">Tareas</a>
+			</nav>
+		</header>
+		<div class="tareas-contenido">
+			<div class="descripcion-tarea">
+				<h2 class="titulo-tarea">Tarea 4</h2>
+				<div class="seccion">
+					<p>
+						<b>PYTHON</b><br>Investigar:
+					</p>
+					<ul>
+						<li>Simbolos</li>
+						<li>Sintaxis</li>
+						<li>Esqueleto de los Programas</li>
+						<li>Aplicacion para editar y ejecutar</li>
+						<li>A que tipo de paradigma pertenece</li>
+						<li>Ejemplo de programa</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="contenedor-codigo">
+				<h3 class="lenguaje">Simbolos</h3>
+				<div class="parrafo">
+					<h4>Operadores Aritmeticos</h4>
+					<table class="tabla-simbolos">
+						<tr>
+							<th>Simbolo</th>
+							<th>Significado</th>
+							<th>Ejemplo</th>
+							<th>Resultado</th>
+						</tr>
+						<tr>
+							<td>+</td>
+							<td>Suma</td>
+							<td>a = 5 + 10</td>
+							<td>a = 15</td>
+						</tr>
+						<tr>
+							<td>-</td>
+							<td>Resta</td>
+							<td>a = 12 + 7</td>
+							<td>a = 5</td>
+						</tr>
+						<tr>
+							<td>-</td>
+							<td>Negación</td>
+							<td>a = -10</td>
+							<td>a = -10</td>
+						</tr>
+						<tr>
+							<td>*</td>
+							<td>Multiplicación</td>
+							<td>a = 4 * 6</td>
+							<td>a = 24</td>
+						</tr>
+						<tr>
+							<td>**</td>
+							<td>Exponente</td>
+							<td>a = 2 ** 3</td>
+							<td>a = 8</td>
+						</tr>
+						<tr>
+							<td>/</td>
+							<td>División</td>
+							<td>a = 12.5 / 2</td>
+							<td>a = 6.25</td>
+						</tr>
+						<tr>
+							<td>//</td>
+							<td>División Entera</td>
+							<td>a = 12.5 / 2</td>
+							<td>a = 6.0</td>
+						</tr>
+						<tr>
+							<td>%</td>
+							<td>Modulo</td>
+							<td>a = 27 / 4</td>
+							<td>a = 3</td>
+						</tr>
+					</table>
+					
+					<h4>Operadores Lógicos</h4>
+					<table class="tabla-simbolos">
+						<tr>
+							<th>Simbolo</th>
+							<th>Significado</th>
+						</tr>
+						<tr>
+							<td>==</td>
+							<td>Igual que</td>
+						</tr>
+						<tr>
+							<td>!=</td>
+							<td>Diferente que</td>
+						</tr>
+						<tr>
+							<td>&lt</td>
+							<td>Menor que</td>
+						</tr>
+						<tr>
+							<td>&lt=</td>
+							<td>Menor o igual que</td>
+						</tr>
+						<tr>
+							<td>&gt</td>
+							<td>Mayor que</td>
+						</tr>
+						<tr>
+							<td>&gt=</td>
+							<td>Mayor o igual que</td>
+						</tr>
+					</table>
+				</div>
+				
+				<h3 class="lenguaje">Sintaxis</h3>
+				<div class="parrafo">
+					<p>
+						La sintaxis de Python tiene ciertas peculiaridades, la mas importante de estas es la sangria. 
+						En otros lenguajes de programación la sangría en el código es solo para facilitar la lectura, 
+						en Python la sangría es muy importante, se utiliza la sangría para indicar un bloque de código. 
+						Si llegaras a omitir una sangria, te saldria un error al ejecutar el archivo.
+					</p>
+					<p>
+						Otro de los aspectos importantes en la sintaxis de Python es que no utilizas un ";" para indicar 
+						el final de una instrucción. Python interpreta cada linea de codigo como una instrucción individual
+						a menos que tenga sangria.
+					</p>
+					<div class="codigo">
+								<pre><code data-language="python">if 5 > 2:
+	print("Five is greater than two!")
+</code></pre>
+					</div>
+					<p>
+						A diferencia de otros lenguajes de programación, Python no tiene comandos para declarar una variable. 
+						Una variable se crea en el momento en que se le asigna un valor. 
+					</p>
+					<div class="codigo">
+								<pre><code data-language="python">x = 5
+y = "John"
+</code></pre>
+					</div>
+					<p>
+						En Python las variables no necesitan ser declaradas con ningún tipo en particular e incluso pueden 
+						cambiar el tipo después de que se hayan establecido.
+					</p>
+					<div class="codigo">
+								<pre><code data-language="ruby">x = 4 # x es de tipo entero
+x = "Sally" # ahora x es de tipo string
+</code></pre>
+					</div>
+					<p></p>
+				</div>
+				
+				<h3 class="lenguaje">Esqueleto de los Programas</h3>
+				<div class="parrafo">
+					<p>
+						Los programas en Python no tienen un esqueleto que se tenga que utilizar siempre como base, 
+						pero el siguiente codigo es el esqueleto para muchos programas de principiantes en Python:
+					</p>
+					<div class="codigo">
+								<pre><code data-language="python"># Actividad que realiza el programa
+								
+variable = float(input('Pedir datos de entrada al usuario')
+
+# Codigo sobre lo que el programa 
+
+if (variable > x):
+	#codigo de if
+
+print("Datos de salida")
+</code></pre>
+					</div>
+					<p></p>
+				</div>
+				
+				<h3 class="lenguaje">Aplicación para Editar y Ejecutar</h3>
+				<div class="parrafo">
+					<p>
+						Para programar en Python se puede utilizar cualquier editor de texto plano, incluso el bloc de notas 
+						siempre y cuando el archivo se guarde con la extension ".py"
+						Sin embargo se recomiendan editores mas avanzados que tengan remarcado de palabras clave a la hora de 
+						escribir codigo para tener una mejor experiencia al leer el codigo.
+						Otro punto a tomar en cuenta antes de empezar a programar en Python es que se necesita descargar e instalar
+						el lenguaje.
+					</p>
+					<a class="link" href="https://www.python.org/">Pagina de Python</a>
+					<p></p>
+				</div>
+				
+				<h3 class="lenguaje">A que tipo de Paradigma Pertenece</h3>
+				<div class="parrafo">
+					<p>
+						Python es un lenguaje de programación multiparadigma. Esto significa que más que forzar a los programadores 
+						a adoptar un estilo particular de programación, permite varios estilos: programación orientada a objetos, 
+						programación imperativa y programación funcional, etc. 
+					</p>
+				</div>
+				
+				<h3 class="lenguaje">Ejemplo de programa</h3>
+				<div class="parrafo">
+				<p></p>
+					<div class="codigo">
+								<pre><code data-language="python">num = float(input("Ingresa un numero: "))
+if num > 0:
+	print("Numero Positivo")
+elif num == 0:
+	print("Cero")
+else:
+	print("Numero Negativo")
+</code></pre>
+					</div>
+					<p></p>
+				</div>
+			</div>
+			
+			<div class="prev-next">
+				<a class="prev" href="tarea-3.html">&lt</a>
+				<a class="next" href="tarea-5.html">&gt</a>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="cont-footer">PIA Lenguajes de Programación <span class="footer-creditos">// Brandon Rojas</span></div>
+		</footer>
+	</body>
+</html>

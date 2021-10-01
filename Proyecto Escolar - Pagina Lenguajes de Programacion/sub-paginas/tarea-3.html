@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../css/estilos.css">
+		<link rel="stylesheet" type="text/css" href="../css/code-theme.css">
+		<script type="text/javascript" src="../js/warpspeed.min.js"></script>
+		<script type="text/javascript" src="../js/rainbow-custom.min.js"></script>
+		<title>PIA | Lenguajes de Programación</title>
+	</head>
+	<body>
+		<div id="background">
+			<canvas id="fondo-galaxia">
+			<script>
+				ai_background=new WarpSpeed("fondo-galaxia",{targetSpeed:0.8, speedAdjFactor:0.07, shape:"square", backgroundColor:"hsl(263,45%,8%)", speedWhileLoading:18});
+			</script>
+		</div>
+		<header>
+			<nav>
+				<a id="titulo">Lenguajes de Programación</a>
+				<a href="../index.html">Inicio</a>
+				<a href="personales.html">Personales</a>
+				<a class="active" href="tareas.html">Tareas</a>
+			</nav>
+		</header>
+		<div class="tareas-contenido">
+			<div class="descripcion-tarea">
+				<h2 class="titulo-tarea">Tarea 3</h2>
+				<div class="seccion">
+					<p>
+						<b>PROLOG</b><br>Investigar:
+					</p>
+					<ul>
+						<li>Simbolos</li>
+						<li>Sintaxis</li>
+						<li>Esqueleto de los Programas</li>
+						<li>Aplicacion para editar y ejecutar</li>
+						<li>A que tipo de paradigma pertenece</li>
+						<li>Ejemplo de programa</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="contenedor-codigo">
+				<h3 class="lenguaje">Simbolos</h3>
+				<div class="parrafo">
+					<p>
+						El sistema Prolog reconoce el tipo de un objeto en el programa por medio de su forma 
+						sintáctica. Esto es posible porque la sintaxis de Prolog especifica diferentes formas 
+						para cada tipo de datos. La forma de distinguir entre átomos y variables es que las 
+						variables empiezan con letras mayúsculas, mientras que los átomos con minúsculas. 
+						No existe información adicional para comunicarle a Prolog el orden para reconocer 
+						el tipo de un objeto.
+					</p>
+					<p>
+						Los átomos pueden construirse de 3 formas:
+					</p>
+					<ul>
+						<li>
+							<p>Cadenas de letras, dígitos y el caracter '_', empezando con una letra minúscula</p>
+							<div class="codigo">
+								<pre><code data-language="ruby">ana 
+pedro 
+x25 
+x_25
+procedmiento_uno 
+categoria_x							</code></pre>
+							</div>
+						</li>
+						<li>
+							<p>Cadenas de caracteres especiales</p>
+							<div class="codigo">
+								<pre><code data-language="ruby"><----> 
+=====> 
+....						</code></pre>
+							</div>
+						</li>
+						<li>
+							<p>
+								Cadenas de caracteres encerradas en apóstrofes. Esto se utiliza cuando se quiere, 
+								por ejemplo, tener un átomo que empiece con una letra mayúscula.
+							</p>
+							<div class="codigo">
+								<pre><code data-language="ruby">'Tom' 
+'Polo_Norte'						</code></pre>
+							</div>
+						</li>
+					</ul>
+					<h4>Simbolos de Operadores</h4>
+					<p>Los operadores de Prolog están divididos en dos clases: aritméticos y relacionales.</p>
+					<p>
+						Los operadores aritméticos incluyen los símbolos para suma, resta, multiplicación y división. 
+						En Prolog, si dos enteros son sumados, restados o multiplicados, el resultado será un entero. 
+						Siempre que uno de los operandos, en cualquiera de estas operaciones sea un número real, el 
+						resultado siempre será un real. El resultado de una división, siempre que los operandos sean 
+						enteros o reales, será siempre real.
+					</p>
+					<h4>Aritmeticos</h4>
+					<p>
+						Todas las versiones de Prolog soportan los siguientes operadores aritméticos, listados en el orden de prioridad de ejecución.
+					</p>
+					<ul>
+						<li><b>+</b> (Suma)</li>
+						<li><b>-&nbsp</b> (Resta)</li>
+						<li><b>*</b> &nbsp(Multiplicación)</li>
+						<li><b>/ </b> &nbsp(División)</li>
+						<li><b>//</b> (División Entera)</li>
+						<li><b>MOD</b> (Residuo)</li>
+						<li><b>^</b> (Potencia)</li>
+					</ul>
+					<h4>Relacionales</h4>
+					<p>
+						Prolog soporta los siguientes operadores relacionales:
+					</p>
+					<ul>
+						<li><b>=</b> (Igual que)</li>
+						<li><b>&gt</b> (Mayor que)</li>
+						<li><b>&gt=</b> &nbsp(Mayor o igual que)</li>
+						<li><b>&lt</b> &nbsp(Menor que)</li>
+						<li><b>&lt=</b> (Menor o igual que)</li>
+						<li><b>&lt&gt</b> (Desigual que)</li>
+						<li><b>=/=</b> (Diferente que)</li>
+						<li><b>is</b> (Evaluador de expresión)</li>
+						<li><b>seed</b> (Generador de numero aleatorios)</li>
+					</ul>
+				</div>
+				
+				<h3 class="lenguaje">Sintaxis</h3>
+				<div class="parrafo">
+					<p>
+						Un programa, o base de datos, en Prolog consiste en uno o más predicados; 
+						Cada predicado consta de una o más cláusulas. Una cláusula es una cláusula 
+						base si es incondicionalmente verdadera, es decir, no tiene "parte si".
+					</p>
+					<div class="codigo">
+								<pre><code data-language="ruby">&ltprograma&gt ::= &ltpredicado&gt | &ltprograma&gt&ltpredicado&gt
+
+&ltpredicado&gt ::= &ltcláusula&gt | &ltpredicado&gt&ltcláusula&gt
+
+&ltcláusula&gt ::= &ltcláusula base&gt | &ltcláusula no-base&gt
+</code></pre>
+					</div>
+					<p>
+						Dos cláusulas pertenecen al mismo predicado si tienen la misma función (nombre) y la misma aridad (número de argumentos). 
+						Por lo tanto, madre(jane) y madre(jane,jim) son predicados diferentes.
+					</p>
+					<div class="codigo">
+								<pre><code data-language="ruby">&ltcláusula base&gt ::= &ltestructura&gt .
+
+&ltcláusula no-base&gt ::= &ltestructura&gt :- &ltestructuras&gt .
+
+&ltestructuras&gt ::= &ltestructura&gt | &ltestructura&gt , &ltestructuras&gt
+</code></pre>
+					</div>
+					<p></p>
+				</div>
+				
+				<h3 class="lenguaje">Esqueleto de los Programas</h3>
+				<div class="parrafo">
+					<p>
+						Los programas en prolog no tienen un esqueleto definido como tal, lo mas comun que se podria 
+						decir que se entiende por esqueleto seria la declaracion de una cláusula y su variante o nombre 
+						para su uso posteriormente.
+					</p>
+					<div class="codigo">
+								<pre><code data-language="ruby">cláusula(nombre) .
+</code></pre>
+					</div>
+					<p></p>
+				</div>
+				
+				<h3 class="lenguaje">Aplicación para Editar y Ejecutar</h3>
+				<div class="parrafo">
+					<h4>SWI-Prolog</h4>
+					<p>
+					La aplicación de preferencia a utilizar es SWI-Prolog la cual ofrece un completo entorno gratuito de Prolog. 
+					El desarrollo de SWI-Prolog ha sido impulsado por las necesidades de las aplicaciones 
+					del mundo real. SWI-Prolog es ampliamente utilizado en investigación y educación, así 
+					como en aplicaciones comerciales.
+					</p>
+					<a class="link" href="http://www.swi-prolog.org/">Pagina de SWI-Prolog</a>
+					<p></p>
+				</div>
+				
+				<h3 class="lenguaje">A que tipo de Paradigma Pertenece</h3>
+				<div class="parrafo">
+					<p>
+						Prolog pertenece a los paradigmas Lógicos y Declarativos
+					</p>
+				</div>
+				
+				<h3 class="lenguaje">Ejemplo de programa</h3>
+				<div class="parrafo">
+				<p></p>
+					<div class="codigo">
+								<pre><code data-language="ruby">chica(rosa).
+chica(laura).
+chica(ana).
+
+chico(pedro).
+chico(juan).
+chico(pablo).
+
+pareja(X,Y):- chico(X), chica(Y).
+</code></pre>
+					</div>
+					<p></p>
+				</div>
+			</div>
+			
+			<div class="prev-next">
+				<a class="prev" href="tarea-2.html">&lt</a>
+				<a class="next" href="tarea-4.html">&gt</a>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="cont-footer">PIA Lenguajes de Programación <span class="footer-creditos">// Brandon Rojas</span></div>
+		</footer>
+	</body>
+</html>
